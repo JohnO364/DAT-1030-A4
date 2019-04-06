@@ -1,5 +1,0 @@
-* Data for this assignment found at this link: Human Resources analysis - Data 
-o Need to create a Kaggle account,
-o Then press download button shown below
-o 
-o File will be downloaded to the folder you choose as a .csv file
