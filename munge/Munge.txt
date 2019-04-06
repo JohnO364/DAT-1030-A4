@@ -1,0 +1,20 @@
+* Transformations applied to this data are:
+
+o Created a new table of existing columns, new table named “employee_sales”
+o SELECTED columns Attrition, Department, JobSatisfaction, and MonthlyIncome from original table and added them to the new one
+* CREATE TABLE employee_sales
+(
+ 	Attrition string,
+ 	Department string,
+ 	JobSatisfaction int,
+ 	MonthlyIncome int
+);
+o Mutated the MonthlyIncome column in the new table to show monthly income rounded to the nearest thousand dollars (ROUND(MonthlyIncome, -3))
+o Filtered data to only show data pertaining to the sales department (WHERE Department LIKE “%sales%”
+o Ordered the data in descending order of Job Satisfaction (ORDER BY JobSatisfaction DESC)
+* SELECT Attrition, 
+ 	ROUND(MonthlyIncome, -3) as Rounded_Income,
+ 	JobSatisfaction
+FROM employee_sales
+WHERE Department LIKE “%sales%”
+ORDER BY JobSatisfaction DESC; 
