@@ -1,0 +1,28 @@
+* Aggregations applied to this data are:
+
+o First to see the number of salespeople with and without attrition
+* SELECT COUNT(Department) AS Non_Attrition
+FROM employee
+WHERE Department LIKE %sales% and Attrition LIKE %no%;
+* For Attrition, change LIKE %no% to LIKE %yes%
+
+o Second, to see the monthly income for:
+* All Sales people:
+* SELECT AVG(MonthlyIncome) AS average_monthly_income,
+ 	MIN(MonthlyIncome) AS min_monthly_income,
+ 	MAX(MonthlyIncome) AS max_monthly_income
+FROM employees
+WHERE Department LIKE “%sales%”
+* With Attrition:
+* Add AND Attrition LIKE “%yes%”
+* Without Attrition:
+* Add AND Attrition LIKE “%no%”
+
+o Third, show count of salespeople for each level of monthly income, split by attrition status:
+* With Attrition:
+* SELECT MonthlyIncome AS monthlyincome, COUNT(MonthlyIncome) AS count
+FROM employees
+WHERE Department LIKE “%sales%” AND Attrition LIKE “%yes%”
+GROUP BY MonthlyIncome;
+* Without Attrition;
+* Change line 3 to say Attrition LIKE “%no%”
